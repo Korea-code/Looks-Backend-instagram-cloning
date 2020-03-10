@@ -8,18 +8,7 @@ export default {
       const { postId } = args;
       const { user } = request;
       const likeFilter = {
-        AND: [
-          {
-            user: {
-              id: user.id
-            }
-          },
-          {
-            post: {
-              id: postId
-            }
-          }
-        ]
+        AND: [{ user: { id: user.id } }, { post: { id: postId } }]
       };
       try {
         const existingLike = await prisma.$exists.like(likeFilter);
