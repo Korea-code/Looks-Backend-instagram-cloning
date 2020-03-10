@@ -31,7 +31,7 @@ type Like {
 }
 type Comment {
   id: ID!
-  test: String!
+  text: String!
   user: User!
   post: Post!
 }
