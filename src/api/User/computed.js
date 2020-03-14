@@ -4,10 +4,10 @@ export default {
     fullName: parent => {
       return `${parent.firstName} ${parent.lastName}`;
     },
-    itsMe: (parent, _, { request }) => {
+    isSelf: (parent, _, { request }) => {
       return parent.id === request.user.id;
     },
-    amIFollowing: (parent, _, { request }) => {
+    isFollowing: async (parent, _, { request }) => {
       const { user } = request;
       const { id: parentId } = parent;
       return prisma.$exists.user({
