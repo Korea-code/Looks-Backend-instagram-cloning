@@ -25,6 +25,8 @@ export default {
       } else {
         const isUserEx = await prisma.$exists.user({ id: toId });
         if (isUserEx) {
+          if (user.id === toId)
+            throw Error("You cannot make room with yourself");
           var room = await prisma.createRoom({
             participants: {
               connect: [{ id: toId }, { id: user.id }]
