@@ -1,5 +1,5 @@
 type Mutation {
-  createAcount(
+  createAccount(
     username: String!
     email: String!
     firstName: String
