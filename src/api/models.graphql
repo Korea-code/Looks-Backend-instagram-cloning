@@ -32,6 +32,7 @@ type Post {
   likeCount: Int!
   createdAt: String
   updatedAt: String
+  commentCount: Int!
 }
 
 type Like {
